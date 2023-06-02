@@ -1,0 +1,65 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<div class="container" style="margin-top: 60px;">
+    <h3 class="text-center text-primary font-weight-bold">Add Members Plan</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for=""><b>Member ID</b></label>
+        <select name="member_id" class="form-control" id="">
+            {% for i in memberID %}
+            <option value="{{i.MemId}}">{{i.MemId}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><b>Plan</b></label>
+        <select name="plan_id_name" class="form-control" id="">
+            {% for i in plan %}
+            <option value="{{i.NameId}}">{{i.NameId}}</option>
+            {% endfor %}
+        </select>
+        <label for=""><b>Join Date</b></label>
+        <input type="date" name="join_date" class="form-control">
+        <label for=""><b>Expirey Date</b></label>
+        <input type="date" name="exp_date" class="form-control">
+        <label for=""><b>State</b></label>
+        <input type="text" name="state" class="form-control">
+        <label for=""><b>Coach Id</b></label>
+        <select name="coach_id" class="form-control" id="">
+            <option value=""></option>
+            {% for i in coachID %}
+            <option value="{{i.CoaId}}">{{i.CoaId}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Record Inserted Successfully');
+    window.location=("{% url 'view_memberplan' %}")
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endif %}
+
+{% endblock%}
+{% block css %}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+{% endblock %}
+{% block footer %}
+<footer id="footer" class="footer">
+    <div class="container">
+    </div>
+</footer>
+{% endblock%}

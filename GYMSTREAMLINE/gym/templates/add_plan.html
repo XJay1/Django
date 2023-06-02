@@ -1,0 +1,46 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<div class="container" style="margin-top: 60px;">
+    <h3 class="text-center text-primary font-weight-bold">Add Plan</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for=""><b>Name</b></label>
+        <input type="text" name="name" class="form-control">
+        <label for=""><b>Amount</b></label>
+        <input type="text" name="amount" class="form-control">
+        <label for=""><b>Duration</b></label>
+        <input type="text" name="duration" class="form-control">
+        <br>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Record Inserted Successfully');
+    window.location=("{% url 'view_plan' %}")
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endif %}
+
+{% endblock%}
+{% block css %}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+{% endblock %}
+{% block footer %}
+<footer id="footer" class="footer">
+    <div class="container">
+    </div>
+</footer>
+{% endblock%}

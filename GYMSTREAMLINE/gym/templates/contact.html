@@ -1,0 +1,79 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block title %}
+Fit India
+{% endblock %}
+
+{% block body %}
+
+<div class="container"  style="margin-top: 50px;">
+    <div class="section-header">
+        <h2 class="section-title wow fadeInDown mt-5">Contact Us</h2>
+        <p class="wow fadeInDown">We're very approachable and would love to speak to you. Feel free to call, send us an email, Tweet us or simply complete the enquiry form.</p>
+    </div>
+    <style>
+.mydivstyle:hover {
+box-shadow: 0 0 20px 0 rgba(28, 8, 204, 0.3);
+transform: translateY(-20px);
+}
+</style>
+<div class="container" style="margin-top: 50px;">
+    <div class="row mt-5 text-center">
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="fa fa-phone-square"></i>Contact</h4>
+            <p class="mt-3 font-weight-bold"><a class="text-danger" >+38000000000</a></p>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="fa fa-envelope"></i> Send Email</h4>
+            <p class="mt-3 font-weight-bold"><a class="text-danger"
+                    href="mailto:mykyta.khanzhyn@nure.ua">mykyta.khanzhyn@nure.ua</a></p>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="fa fa-address-card"></i> Office Address</h4>
+            <p class="mt-3 font-weight-bold"><a class="text-danger"
+                    href="https://www.google.com/maps/place/Харьковский+национальный+университет+радиоэлектроники/@50.0151205,36.2272353,18.75z/data=!4m6!3m5!1s0x4127a1243f9e69d1:0x6daed05394f03251!8m2!3d50.0150907!4d36.2286404!16s%2Fm%2F0crgs_g?entry=ttu">Kharkiv, Ukraine</a></p>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 mydivstyle">
+            <h4><i class="fa fa-clock-o"></i> Opening Hours</h4>
+            <p class="mt-3 font-weight-bold"><a class="text-danger">9:00 AM to 9:00 PM</a></p>
+        </div>
+    </div>
+</div>
+    <div class="container contact-info mt-5">
+        <div class="row">
+
+            <div class="col-sm-8 col-md-8">
+                <div class="contact-form">
+
+                    <form id="main-contact-form" name="contact-form" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" rows="8" placeholder="Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+<footer id="footer" class="footer">
+    <div class="container">
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<div class="container" style="margin-top: 60px;">
+    <h3 class="text-center text-primary font-weight-bold">Add Member</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for=""><b>ID</b></label>
+        <input type="text" name="mem_id" class="form-control">
+        <label for=""><b>Name</b></label>
+        <input type="text" name="name" class="form-control">
+        <label for=""><b>Surname</b></label>
+        <input type="text" name="surname" class="form-control">
+        <label for=""><b>Contact</b></label>
+        <input type="tel" name="contact" class="form-control">
+        <label for=""><b>Email</b></label>
+        <input type="email" name="email" class="form-control">
+        <label for=""><b>Age</b></label>
+        <input type="text" name="age" class="form-control">
+        <br>
+        <label for=""><b>Gender</b></label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <br>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+
+{% if error == "no" %}
+<script>
+    alert('Record Inserted Successfully');
+    window.location=("{% url 'view_member' %}")
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+    alert('Something went wrong, Try Again');
+</script>
+{% endif %}
+
+{% endblock%}
+
+{% block css %}
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+color: white;
+text-align: center;
+}
+{% endblock %}
+
+{% block footer %}
+<footer id="footer" class="footer">
+    <div class="container">
+    </div>
+</footer>
+{% endblock%}
