@@ -24,4 +24,14 @@ zserfvbn
 
 cd GYMSTREAMLINE
 
-python manage.py runserver
+python manage.py runserver localhost:80
+
+
+
+
+для запуска сервера глобально:
+E:
+
+cd E:\Python\Django-Gym-Management-master\DjangoGymstreamline
+
+python pagekite.py --insecure

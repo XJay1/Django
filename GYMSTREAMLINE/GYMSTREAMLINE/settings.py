@@ -25,7 +25,7 @@ SECRET_KEY = '%$$-76y4tl7sbv*e$acozc=$wjeua9d8g0l%y$&afj@1zo@f^+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'gymstreamline.pagekite.me']
 
 
 # Application definition
@@ -123,3 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://gymstreamline.pagekite.me',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'https://gymstreamline.pagekite.me',
+]
